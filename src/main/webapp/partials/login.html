@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="loginController">
+        <div style="padding-left:  10%;width: 80%">
+            <div><center><h4>Login</h4></center></div>
+            <hr/>
+            <form name="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="emailLabel">Email address</label>
+                    <input type="email" name="email" ng-model="userData.email" required  class="form-control" id="emailLabel" aria-describedby="emailHelp" placeholder="Enter email"/>
+                    <span style="color:red" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+                        <span ng-show="loginForm.email.$error.required">Email is required.</span>
+                        <span ng-show="loginForm.email.$error.email">Invalid email address.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="passwordLabel">Password</label>
+                    <input name="password" type="password" ng-model="userData.password" ng-minlength="6" required class="form-control" id="passwordLabel" placeholder="Password"/>
+                    <span style="color:red" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+                        <span ng-show="loginForm.password.$error.required">Password is required.</span>
+                        <span ng-show="loginForm.password.$error.minlength">Minimum 6 length is required.</span>
+                    </span>
+                </div>
+                <input type="button" class="btn btn-primary" value="Login" ng-click="login();" ng-disabled="loginForm.$invalid"/>
+                <span style="color:red" ng-if="loginFailed">
+                    <span>Login Failed. Please check your user name and password.</span>
+                </span>
+            </form>
+        </div>
+    </body>
+</html>

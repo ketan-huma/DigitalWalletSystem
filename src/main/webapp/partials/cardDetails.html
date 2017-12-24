@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div style="padding-left:  10%;width: 80%">
+            <div><center><h4>Add Visa/Maestro Card</h4></center></div>
+            <hr/>
+            <form name="cardDetailsForm">
+                <div class="form-group">
+                    <label for="cardNo">Card Number (16 digit)</label>
+                    <input type="number" name="cardNo" ng-model="cardData.cardNo" required  class="form-control" id="cardNo" placeholder="Enter your Credit/Debit Card number"
+                           ng-minlength="16" ng-maxlength="16"/>
+                    <span style="color:red" ng-show="cardDetailsForm.cardNo.$dirty && cardDetailsForm.cardNo.$invalid">
+                        <span ng-show="cardDetailsForm.cardNo.$error.required">Card number is required.</span>
+                        <span ng-show="cardDetailsForm.cardNo.$error.minlength">Please enter 16 digit.</span>
+                        <span ng-show="cardDetailsForm.cardNo.$error.maxlength">Please enter 16 digit.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="cardNameLabel">Name Written on Card</label>
+                    <input type="text" name="cardName" ng-model="cardData.nameOnCard" required class="form-control" id="cardNameLabel" placeholder="Enter name written on card"/>
+                    <span style="color:red" ng-show="cardDetailsForm.cardName.$dirty && cardDetailsForm.cardName.$invalid">
+                        <span ng-show="cardDetailsForm.cardName.$error.required">Card Name is required.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="cardValidity">Card Validity (MM-YYYY)</label>
+                    <input type="text" name="cardValidity" ng-model="cardData.cardValidity" required class="form-control" id="cardValidity" placeholder="Enter card validity (MM-YYYY)"
+                           ng-pattern="/^(0[1-9]|1[0-2])-\d{4}$/"/>
+                    <span style="color:red" ng-show="cardDetailsForm.cardValidity.$dirty && cardDetailsForm.cardValidity.$invalid">
+                        <span ng-show="cardDetailsForm.cardValidity.$error.required">Card Validity is required.</span>
+                        <span ng-show="cardDetailsForm.cardValidity.$error.pattern">Invalid Card Validity.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="cardCvv">Card CVV number (3 digit)</label>
+                    <input type="number" name="cardCvv" ng-model="cardData.cardCvv" required  class="form-control" id="cardCvv" placeholder="Enter your Credit/Debit Card CVV number"
+                           ng-minlength="3" ng-maxlength="3"/>
+                    <span style="color:red" ng-show="cardDetailsForm.cardCvv.$dirty && cardDetailsForm.cardCvv.$invalid">
+                        <span ng-show="cardDetailsForm.cardCvv.$error.required">Card CVV number is required.</span>
+                        <span ng-show="cardDetailsForm.cardCvv.$error.minlength">Please enter 3 digit CVV number.</span>
+                        <span ng-show="cardDetailsForm.cardCvv.$error.maxlength">Please enter 3 digit CVV number.</span>
+                    </span>
+                </div> 
+
+
+                <input type="button" class="btn btn-primary" value="Save" ng-click="saveCard();" ng-disabled="cardDetailsForm.$invalid"/>
+            </form>
+
+            <div><center><h4>Your Visa/Maestro Cards</h4></center></div>
+            <hr/>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name on Card</th>
+                        <th scope="col">Card Number</th>
+                        <th scope="col">Card Validity</th>
+                        <th scope="col">Card CVV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="card in cardDetails track by $index">
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>{{card.nameOnCard}}</td>
+                        <td>{{card.cardNo}}</td>
+                        <td>{{card.cardValidity}}</td>
+                        <td>{{card.cardCvv}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </body>
+</html>
