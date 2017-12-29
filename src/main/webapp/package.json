@@ -1,0 +1,37 @@
+{
+  "name": "digitalwalletsystem",
+  "version": "1.0.0",
+  "description": "This is the application for making digital transaction ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjariwala1/DigitalWalletSystem.git"
+  },
+  "keywords": [
+    "angular",
+    "java",
+    "spring",
+    "hibernate",
+    "grunt"
+  ],
+  "author": "Ketan Jariwala",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kjariwala1/DigitalWalletSystem/issues"
+  },
+  "homepage": "https://github.com/kjariwala1/DigitalWalletSystem#readme",
+  "dependencies": {
+    "angular": "1.3.0",
+    "angular-route": "1.3.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.3.0"
+  }
+}

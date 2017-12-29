@@ -12,7 +12,6 @@
     </head>
 
     <body ng-cloak>
-
         <%
             HttpSession httpSession = request.getSession();
             String userId = (String) httpSession.getAttribute("userId");
@@ -47,9 +46,12 @@
 
     <ng-view></ng-view>
 
-    <script src="lib/angular.js" type="text/javascript"></script>
-    <script src="lib/angular-route.js" type="text/javascript"></script>
-    <script src="app/walletApp.js" type="text/javascript"></script>
+    <!--<script src="lib/angular.js" type="text/javascript"></script>-->
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <!--<script src="lib/angular-route.js" type="text/javascript"></script>-->
+    <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+    <!--    <script src="app/walletApp.js" type="text/javascript"></script>-->
+    <script src="dist/digitalwalletsystem.js" type="text/javascript"></script>
     <script src="lib/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
     <script src="lib/popper.min.js" type="text/javascript"></script>
     <script src="lib/bootstrap.min.js" type="text/javascript"></script>
