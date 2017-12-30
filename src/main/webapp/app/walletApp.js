@@ -1,4 +1,8 @@
-var wallet = angular.module('wallet', ['ngRoute']);
+/*jshint esversion: 6 */
+import angular from 'angular';
+import ngRoute from 'angular-route';
+
+var wallet = angular.module('wallet', [ngRoute]);
 
 wallet.factory('walletHttpInterceptor', ['$q', '$rootScope', '$location', function ($q, $rootscope, $location) {
         return {
