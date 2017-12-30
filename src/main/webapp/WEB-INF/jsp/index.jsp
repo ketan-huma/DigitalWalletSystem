@@ -25,16 +25,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#/home">Home </a>
+                    <a class="nav-link" href="#!/home">Home </a>
                 </li>
                 <li class="nav-item" ng-if="${userId == null || userId == ""}">
-                    <a class="nav-link" href="#/register">Register</a>
+                    <a class="nav-link" href="#!/register">Register</a>
                 </li>
                 <li class="nav-item" ng-if="${userId == null || userId == ""}">
-                    <a class="nav-link" href="#/login">Login</a>
+                    <a class="nav-link" href="#!/login">Login</a>
                 </li>
                 <li class="nav-item" ng-if="${!(userId == null || userId == "")}">
-                    <a class="nav-link" href="#/cardDetails">My Wallet</a>
+                    <a class="nav-link" href="#!/cardDetails">My Wallet</a>
                 </li>
                 <li class="nav-item" ng-if="${!(userId == null || userId == "")}" ng-controller="loginController">
                     <a class="nav-link" ng-click="logout();" style="cursor: pointer">Logout</a>
@@ -47,11 +47,11 @@
     <ng-view></ng-view>
 
     <!--<script src="lib/angular.js" type="text/javascript"></script>-->
-    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <!--<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>-->
     <!--<script src="lib/angular-route.js" type="text/javascript"></script>-->
-    <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+    <!--<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>-->
     <!--    <script src="app/walletApp.js" type="text/javascript"></script>-->
-    <script src="dist/digitalwalletsystem.js" type="text/javascript"></script>
+    <script src="dist/digitalwalletsystem.es5.js" type="text/javascript"></script>
     <script src="lib/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
     <script src="lib/popper.min.js" type="text/javascript"></script>
     <script src="lib/bootstrap.min.js" type="text/javascript"></script>
